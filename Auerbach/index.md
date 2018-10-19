@@ -27,5 +27,5 @@
 2. **资产管理**      
 2.1. [新建编辑资产](newProperty.md)      
 2.2. [编辑资产关系](PropertyRelation.md)  
-2.3. 资产导入   
-2.4. 资产搜索   
+2.3. [资产导入](PropertyImport.md)  
+2.4. [资产搜索](PropertySearch.md)    
