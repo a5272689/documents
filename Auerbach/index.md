@@ -28,4 +28,14 @@
 2.1. [新建编辑资产](newProperty.md)      
 2.2. [编辑资产关系](PropertyRelation.md)  
 2.3. [资产导入](PropertyImport.md)  
-2.4. [资产搜索](PropertySearch.md)    
+2.4. [资产搜索](PropertySearch.md)  
+## API接口
+1. **模型操作相关API**    
+1.1. [模型获取](modelAPI1.md)      
+1.2. [模型关系获取](modelAPI2.md)      
+2. **资产操作相关API**   
+2.1. [资产获取](PropertyAPI1.md)      
+2.2. [资产关系获取](PropertyAPI2.md)   
+2.3. [资产关系获取](PropertyAPI3.md)   
+2.4. [资产关系获取](PropertyAPI4.md)   
+2.5. [资产关系获取](PropertyAPI5.md)   
