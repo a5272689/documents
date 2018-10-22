@@ -1,5 +1,5 @@
 # 1.1. 模型获取
-**path:** /auerbach/api/v1/models
+**path:** /auerbach/api/v1/models    
 **method:** GET
 #### 参数：
 #### 返回值：
