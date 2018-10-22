@@ -1,5 +1,5 @@
 # 1.1. 模型关系获取
-**path:** /api/v1/modelrelations
+**path:** /auerbach/api/v1/modelrelations                   
 **method:** GET
 #### 参数：
 | 参数        | 是否必须           | 值示例  |

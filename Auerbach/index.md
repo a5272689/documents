@@ -37,5 +37,5 @@
 2.1. [资产获取](PropertyAPI1.md)      
 2.2. [资产关系获取](PropertyAPI2.md)   
 2.3. [资产搜索](PropertyAPI3.md)   
-2.4. [资产关系获取](PropertyAPI4.md)   
-2.5. [资产关系获取](PropertyAPI5.md)   
+2.4. [资产新增](PropertyAPI4.md)   
+2.5. [资产更新](PropertyAPI5.md)   

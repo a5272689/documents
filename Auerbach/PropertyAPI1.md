@@ -1,5 +1,5 @@
 # 1.1. 资产获取
-**path:** /api/v1/propertys
+**path:** /auerbach/api/v1/propertys
 **method:** GET
 #### 参数：
 | 参数        | 是否必须           | 值示例  |

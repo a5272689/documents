@@ -1,5 +1,5 @@
 # 1.1. 资产搜索
-**path:** /api/searchpropertyv1
+**path:** /auerbach/api/v1/searchproperty    
 **method:** GET
 #### 参数：
 | 参数        | 是否必须           | 值示例  |
