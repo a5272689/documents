@@ -1,5 +1,5 @@
-# 2.4. 资产新增
-**path:** /auerbach/api/v1/propertys    
+# 2.7. 资产关系新增
+**path:** /auerbach/api/v1/propertyrelations    
 **method:** POST
 #### 请求头：
 | 参数        | 是否必须           | 值示例  |
@@ -8,18 +8,10 @@
 #### 请求体：
 ```
 {
-  "index":"testmodel",
-  "data":{
-     "a": "22",
-     "b": "22",
-     "c": "22",
-     "d": "22",
-     "e": "22",
-     "f": "22",
-     "g": "22",
-     "h": "22",
-     "testfield": "222"
-  }
+	"relation_id": 10000,
+	"source_property_id": "kRkUXmQBuPAr9qPqSpJW",
+	"tags": "",
+	"target_property_id": "NNLFi2YBHhd-Km3cRrxv"
 }
 ```
 #### 参数：

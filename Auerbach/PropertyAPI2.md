@@ -1,4 +1,4 @@
-# 1.1. 资产关系获取
+# 2.2. 资产关系获取
 **path:** /auerbach/api/v1/propertyrelations             
 **method:** GET
 #### 参数：

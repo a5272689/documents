@@ -1,4 +1,4 @@
-# 1.1. 资产更新
+# 2.5. 资产更新
 **path:** /auerbach/api/v1/propertys    
 **method:** PUT
 #### 请求头：
