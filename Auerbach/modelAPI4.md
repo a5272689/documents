@@ -1,4 +1,4 @@
-# 1.3. 模型新增
+# 1.4. 模型更新
 **path:** /auerbach/api/v1/models                   
 **method:** PUT
 #### 请求头：
