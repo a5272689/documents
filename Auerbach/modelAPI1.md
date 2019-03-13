@@ -5,57 +5,787 @@
 #### 返回值：
 ```
 {
-    "result": true,
-    "info": "",
-    "data": [
-        {
-            "id": 10000,
-            "name": "测试模型",
-            "field": "testmodel",
-            "classify_id": 10002,
-            "namefields": [
-                "testfield"
-            ],
-            "uniqfields": [
-                "testfield"
-            ],
-            "fields": [
-                {
-                    "field": "testfield",
-                    "name": "测试字段",
-                    "unit": "",
-                    "valtype": "keyword"
-                },
-                {
-                    "field": "a",
-                    "name": "测试字段1",
-                    "unit": "",
-                    "valtype": "text"
-                },
-                {
-                    "countfield": "t",
-                    "countway": "count",
-                    "field": "testfilegroup",
-                    "fields": [
-                        {
-                            "field": "t",
-                            "name": "t",
-                            "unit": "",
-                            "valtype": "long"
-                        }
-                    ],
-                    "name": "测试字段zu1",
-                    "valtype": "nested"
-                }
-            ],
-            "show_fields": [
-                "b",
-                "c",
-                "testfield",
-                "a"
-            ],
-            "mapping": null
-        }
-    ]
+	"result": true,
+	"info": "",
+	"data": [{
+		"id": 10000,
+		"name": "服务器",
+		"field": "server",
+		"classify_id": 10002,
+		"namefields": ["hostname"],
+		"uniqfields": ["hostname"],
+		"fields": [{
+			"child_fields": [{
+				"field": "hostname",
+				"formtype": "input",
+				"name": "主机名",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "biosversion",
+				"formtype": "input",
+				"name": "BIOS版本",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "kernel",
+				"formtype": "input",
+				"name": "内核",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "kernelrelease",
+				"formtype": "input",
+				"name": "内核型号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "serialnumber",
+				"formtype": "input",
+				"name": "序列号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "osrelease",
+				"formtype": "input",
+				"name": "系统版本",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "uuid",
+				"formtype": "input",
+				"name": "UUID",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "numcpus",
+				"formtype": "input",
+				"name": "核数",
+				"unit": "核",
+				"valtype": "number"
+			}, {
+				"field": "cpumodel",
+				"formtype": "input",
+				"name": "CPU型号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "cpuarch",
+				"formtype": "input",
+				"name": "CPU位数",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "osfamily",
+				"formtype": "input",
+				"name": "系统家族",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "osarch",
+				"formtype": "input",
+				"name": "系统位数",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "os",
+				"formtype": "input",
+				"name": "系统",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "memtotal",
+				"formtype": "input",
+				"name": "内存",
+				"unit": "kb",
+				"valtype": "number"
+			}, {
+				"field": "alive",
+				"formtype": "switch",
+				"name": "存活状态",
+				"unit": "",
+				"valtype": "bool"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}, {
+			"child_fields": [{
+				"field": "path",
+				"formtype": "input",
+				"name": "路径",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "filesystem",
+				"formtype": "input",
+				"name": "文件系统",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "total",
+				"formtype": "input",
+				"name": "总大小",
+				"unit": "GB",
+				"valtype": "number"
+			}],
+			"field": "disks",
+			"formtype": "list",
+			"name": "磁盘",
+			"not_delete": false
+		}, {
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名称",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "ip",
+				"formtype": "input",
+				"name": "IP地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "hwaddr",
+				"formtype": "input",
+				"name": "MAC地址",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "interfaces",
+			"formtype": "list",
+			"name": "网卡",
+			"not_delete": false
+		}],
+		"show_fields": ["hostname", "alive", "biosversion", "kernel", "kernelrelease", "serialnumber", "osrelease", "uuid", "numcpus", "cpumodel", "cpuarch", "osfamily", "osarch", "os", "memtotal"],
+		"mapping": null
+	}, {
+		"id": 10002,
+		"name": "技术中心组",
+		"field": "tcentergroup",
+		"classify_id": 10002,
+		"namefields": ["name", "ownername"],
+		"uniqfields": ["name", "code"],
+		"fields": [{
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "组名",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "code",
+				"formtype": "input",
+				"name": "组编码",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "ownername",
+				"formtype": "input",
+				"name": "组长",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "ownercode",
+				"formtype": "input",
+				"name": "组长编码",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "dingdingrobot",
+				"formtype": "input",
+				"name": "告警群机器人",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["name", "code", "ownername", "ownercode", "dingdingrobot"],
+		"mapping": null
+	}, {
+		"id": 10003,
+		"name": "运维人员",
+		"field": "opser",
+		"classify_id": 10002,
+		"namefields": ["name"],
+		"uniqfields": ["name", "code"],
+		"fields": [{
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名字",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "code",
+				"formtype": "input",
+				"name": "员工号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "mail",
+				"formtype": "input",
+				"name": "邮箱",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "mobile",
+				"formtype": "input",
+				"name": "手机号码",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "innerGroup",
+				"formtype": "input",
+				"name": "内部分组",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}, {
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名称",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"countfield": "name",
+			"countway": "count",
+			"field": "middlewares",
+			"formtype": "list",
+			"name": "管理中间件",
+			"not_delete": false,
+			"valtype": "list"
+		}],
+		"show_fields": ["name", "code", "mail", "mobile", "innerGroup"],
+		"mapping": null
+	}, {
+		"id": 10018,
+		"name": "交换机",
+		"field": "switch",
+		"classify_id": 10002,
+		"namefields": ["name"],
+		"uniqfields": ["serialNumber"],
+		"fields": [{
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名称",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "ipAddr",
+				"formtype": "input",
+				"name": "IP地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "macAddr",
+				"formtype": "input",
+				"name": "MAC地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "contractor",
+				"formtype": "input",
+				"name": "厂商",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "brand",
+				"formtype": "input",
+				"name": "品牌",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "model",
+				"formtype": "input",
+				"name": "型号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "serialNumber",
+				"formtype": "input",
+				"name": "序列号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "systemInfo",
+				"formtype": "input",
+				"name": "系统信息",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "systemVersion",
+				"formtype": "input",
+				"name": "系统版本",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}, {
+			"child_fields": [{
+				"field": "interfaceType",
+				"formtype": "input",
+				"name": "端口类型",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "interfaceNum",
+				"formtype": "input",
+				"name": "端口号",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "ipAddr",
+				"formtype": "input",
+				"name": "IP地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "macAddr",
+				"formtype": "input",
+				"name": "MAC地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "interfaceRate",
+				"formtype": "input",
+				"name": "端口速率",
+				"unit": "Mbps",
+				"valtype": "number"
+			}],
+			"countfield": "interfaceNum",
+			"countway": "count",
+			"field": "interface",
+			"formtype": "list",
+			"name": "网口",
+			"not_delete": false,
+			"valtype": "list"
+		}],
+		"show_fields": ["ipAddr", "macAddr", "contractor", "brand", "model"],
+		"mapping": null
+	}, {
+		"id": 10019,
+		"name": "Nginx",
+		"field": "nginx",
+		"classify_id": 10001,
+		"namefields": ["cluster_name"],
+		"uniqfields": ["cluster_name"],
+		"fields": [{
+			"child_fields": [{
+				"field": "cluster_name",
+				"formtype": "input",
+				"ismust": true,
+				"name": "集群名称",
+				"valtype": "string"
+			}, {
+				"field": "installPath",
+				"formtype": "input",
+				"name": "安装路径",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "version",
+				"formtype": "input",
+				"name": "版本",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "workerProcesses",
+				"formtype": "input",
+				"name": "工作进程数",
+				"unit": "",
+				"valtype": "number"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["cluster_name", "version"],
+		"mapping": null
+	}, {
+		"id": 10021,
+		"name": "机房",
+		"field": "engineroom",
+		"classify_id": 10002,
+		"namefields": ["name"],
+		"uniqfields": ["name"],
+		"fields": [{
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名称",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "addr",
+				"formtype": "input",
+				"name": "地址",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "manager",
+				"formtype": "input",
+				"name": "管理员",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "phone",
+				"formtype": "input",
+				"name": "管理员电话",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["name", "addr", "manager", "phone"],
+		"mapping": null
+	}, {
+		"id": 10022,
+		"name": "机柜",
+		"field": "cabinet",
+		"classify_id": 10002,
+		"namefields": ["name", "addr"],
+		"uniqfields": ["name"],
+		"fields": [{
+			"child_fields": [{
+				"field": "name",
+				"formtype": "input",
+				"name": "名称",
+				"unit": "",
+				"valtype": "string"
+			}, {
+				"field": "capacity",
+				"formtype": "input",
+				"name": "容量",
+				"unit": "U",
+				"valtype": "number"
+			}, {
+				"field": "addr",
+				"formtype": "input",
+				"name": "位置",
+				"unit": "",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["name", "capacity", "addr"],
+		"mapping": null
+	}, {
+		"id": 10032,
+		"name": "HBase",
+		"field": "hbase",
+		"classify_id": 10001,
+		"namefields": ["nodeType"],
+		"uniqfields": ["nodeType"],
+		"fields": [{
+			"child_fields": [{
+				"field": "nodeType",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "hMaster",
+					"label": "HMaster"
+				}, {
+					"field": "regionServer",
+					"label": "RegionServer"
+				}],
+				"name": "节点类型",
+				"valtype": "stringlist"
+			}, {
+				"field": "port",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "60010",
+					"label": "HMaster端口"
+				}, {
+					"field": "60020",
+					"label": "RegionServer端口"
+				}],
+				"name": "端口组",
+				"valtype": "stringlist"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["nodeType", "port"],
+		"mapping": null
+	}, {
+		"id": 10037,
+		"name": "Hive",
+		"field": "hive",
+		"classify_id": 10001,
+		"namefields": ["nodeType", "hivePort"],
+		"uniqfields": ["nodeType", "hivePort"],
+		"fields": [{
+			"child_fields": [{
+				"field": "nodeType",
+				"formtype": "checkbox",
+				"ismust": true,
+				"labels": [{
+					"field": "hiveserver2",
+					"label": "HiveServer2"
+				}, {
+					"field": "hivemetastore",
+					"label": "HiveMetastore"
+				}],
+				"name": "节点类型",
+				"valtype": "stringlist"
+			}, {
+				"field": "hivePort",
+				"formtype": "checkbox",
+				"ismust": true,
+				"labels": [{
+					"field": "10000",
+					"label": "HiveServer2端口"
+				}, {
+					"field": "9083",
+					"label": "HiveMetastore端口"
+				}],
+				"name": "Hive端口",
+				"valtype": "stringlist"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["hivePort"],
+		"mapping": null
+	}, {
+		"id": 10039,
+		"name": "Yarn",
+		"field": "yarn",
+		"classify_id": 10001,
+		"namefields": ["nodeType", "port"],
+		"uniqfields": ["nodeType", "port"],
+		"fields": [{
+			"child_fields": [{
+				"field": "nodeType",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "resouceManager",
+					"label": "ResourceManager"
+				}, {
+					"field": "nodeManager",
+					"label": "NodeManager"
+				}],
+				"name": "节点类型",
+				"valtype": "stringlist"
+			}, {
+				"field": "port",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "8088",
+					"label": "ResouceManager REST 端口"
+				}, {
+					"field": "8041",
+					"label": "NodeManagerIPC端口"
+				}],
+				"name": "端口",
+				"valtype": "stringlist"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["nodeType", "port"],
+		"mapping": null
+	}, {
+		"id": 10040,
+		"name": "SparkStandalone",
+		"field": "sparkstandalone",
+		"classify_id": 10001,
+		"namefields": ["nodeType"],
+		"uniqfields": ["nodeType"],
+		"fields": [{
+			"child_fields": [{
+				"field": "nodeType",
+				"formtype": "checkbox",
+				"ismust": true,
+				"labels": [{
+					"field": "sparkMaster",
+					"label": "SparkMaster"
+				}, {
+					"field": "sparkWork",
+					"label": "SparkWork"
+				}],
+				"name": "节点类型",
+				"valtype": "stringlist"
+			}, {
+				"field": "port",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "7077",
+					"label": "SparkMaster端口"
+				}],
+				"name": "端口组",
+				"valtype": "stringlist"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}],
+		"show_fields": ["nodeType", "port"],
+		"mapping": null
+	},{
+		"id": 10046,
+		"name": "测试模型",
+		"field": "testmodel",
+		"classify_id": 10000,
+		"namefields": ["c"],
+		"uniqfields": ["c"],
+		"fields": [{
+			"child_fields": [{
+				"field": "a",
+				"formtype": "radio",
+				"ismust": false,
+				"labels": [{
+					"field": "1",
+					"label": "单选1"
+				}],
+				"name": "单选框",
+				"valtype": "string"
+			}, {
+				"field": "b",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "1",
+					"label": "多选1"
+				}, {
+					"field": "2",
+					"label": "多选2"
+				}],
+				"name": "多选框",
+				"valtype": "stringlist"
+			}, {
+				"field": "c",
+				"formtype": "input",
+				"ismust": false,
+				"name": "输入框",
+				"valtype": "string"
+			}, {
+				"field": "d",
+				"formtype": "text",
+				"ismust": false,
+				"name": "文本框",
+				"valtype": "string"
+			}, {
+				"field": "e",
+				"formtype": "inputnumber",
+				"ismust": false,
+				"name": "计数器",
+				"valtype": "number"
+			}, {
+				"field": "f",
+				"formtype": "select",
+				"ismust": false,
+				"labels": [{
+					"field": "1",
+					"label": "选择1"
+				}, {
+					"field": "2",
+					"label": "选择2"
+				}],
+				"multiple": false,
+				"name": "选择器",
+				"valtype": "string"
+			}, {
+				"field": "g",
+				"formtype": "switch",
+				"ismust": false,
+				"name": "开关",
+				"valtype": "bool"
+			}, {
+				"field": "h",
+				"formtype": "time",
+				"ismust": false,
+				"name": "时间",
+				"valtype": "string"
+			}, {
+				"field": "i",
+				"formtype": "date",
+				"ismust": false,
+				"name": "日期",
+				"valtype": "string"
+			}, {
+				"field": "j",
+				"formtype": "datetime",
+				"ismust": false,
+				"name": "时间日期",
+				"valtype": "string"
+			}],
+			"field": "base_info",
+			"formtype": "map",
+			"name": "基础信息",
+			"not_delete": true
+		}, {
+			"child_fields": [{
+				"field": "jkjkl",
+				"formtype": "checkbox",
+				"ismust": false,
+				"labels": [{
+					"field": "11",
+					"label": "aa"
+				}, {
+					"field": "22",
+					"label": "bb"
+				}],
+				"name": "多选框组",
+				"valtype": "stringlist"
+			}, {
+				"field": "dd",
+				"formtype": "datetime",
+				"ismust": false,
+				"name": "时间日期2",
+				"valtype": "string"
+			}],
+			"field": "fields2",
+			"formtype": "list",
+			"name": "列表组"
+		}, {
+			"child_fields": [{
+				"field": "2",
+				"formtype": "datetime",
+				"ismust": false,
+				"name": "时间日期3",
+				"valtype": "string"
+			}],
+			"field": "333",
+			"formtype": "map",
+			"name": "字段组"
+		}],
+		"show_fields": ["a", "b", "c", "d", "e"],
+		"mapping": null
+	}]
 }
 ```
